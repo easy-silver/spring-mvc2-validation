@@ -160,6 +160,9 @@ public class ValidationItemControllerV2 {
         log.info("objectName={}", bindingResult.getObjectName());
         log.info("target={}", bindingResult.getTarget());
 
+        //ValidationUtils 사용(아래 코드를 한 줄로 구현 가능)
+        //ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult, "itemName", "required");
+
         //검증 로직
         if (!StringUtils.hasText(item.getItemName())) {
             bindingResult.rejectValue("itemName", "required");
